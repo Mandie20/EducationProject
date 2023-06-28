@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"  type="text/css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/dist/output.css" rel="stylesheet">
+
+
+    <!-- Alpine -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"></script>
+    <title>About GLEARNING</title>
+</head>
+<body class="bg-color_bg leading-loose m-0 p-0 box-border text-white"
+        x-data="{navbarOpen: false, scrolledFromTop: false, openMenu: false}"
+        x-init="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false"
+        @scroll.window="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false"
+
+        :class="openMenu ? 'overflow-fidden' : 'overflow-visible'"
+    >
+
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
+    
+        <nav class="nav-menu w-screen h-20 bg-transparent fixed top-0 z-10 transition-all duration-200"
+            :class="{ 'h-20': !scrolledFromTop, 'h-20': !scrolledFromTop}"
+        >
+            <div class="container lg:w-large my-auto mx-0  pt-0 pb-0 pl-24 text-color_white h-full flex justify-between items-center">
+                <a href="index.html" class=""><h4 class="leading-all_h text-h4 ">GLEARNING</h4></a>
+                <ul class="hidden  md:flex flex-row items-center gap-16">
+                    <li><a class="inline-flex hover:text-color_bg2 text-nav_a duration-duration_400" href="index.html" aria-current="true">Home</a></li>
+                    <li><a class="inline-flex hover:text-color_bg2 text-nav_a duration-duration_400" href="about.html">About</a></li>
+                    <li><a class="inline-flex hover:text-color_bg2 text-nav_a duration-duration_400" href="courses.html">Courses</a></li>
+                    <li><a class="inline-flex hover:text-color_bg2 text-nav_a duration-duration_400" href="contact.html">Contact us</a></li>
+                </ul>
+                <button id="open-menu-btn" class="md:hidden" @click="openMenu = !openMenu" :aria-expanded="openMenu" aria-controls="mobile-navigation" aria-label="Navigation Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-white">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- POP out navbar -->
+
+        <nav id="mobile-navigation" class="md:hidden fixed top-0 right-0 bottom-0 left-0 z-10 navMenu_Ul"
+            :class="openMenu ? 'visible' : 'invisible' " x-cloak>
+            <ul class="ul_li absolute top-20 right-10 bottom-0  w-72 h-fit gap-0 py-4 z-10" 
+                :class="openMenu ? 'translate-x-0' : 'translate-x-full'">
+                <!-- transition-all -->
+                <li class="animate-wiggle origin-top-right w-full h-li_responsive"><a class="bg-primary shadow-box_shad1 text-center grid p-4 w-full h-full hover:bg-color_bg2 hover:text-color_white" href="./index.html" aria-current="true">Home</a></li>
+                <li class="animate-wiggle origin-top-right w-full h-li_responsive"><a class="bg-primary shadow-box_shad1 text-center grid p-4 w-full h-full  hover:bg-color_bg2 hover:text-color_white" href="about.html">About</a></li>
+                <li class="animate-wiggle origin-top-right w-full h-li_responsive"><a class="bg-primary shadow-box_shad1 text-center grid p-4 w-full h-full hover:bg-color_bg2 hover:text-color_white" href="courses.html">Courses</a></li>
+                <li class="animate-wiggle origin-top-right w-full h-li_responsive"><a class="bg-primary shadow-box_shad1 text-center grid p-4 w-full h-full  hover:bg-color_bg2 hover:text-color_white" href="contact.html">Contact us</a></li>
+            </ul>
+            <button id="close-menu-btn" class="absolute top-4 right-0 left-40 bottom-full" @click="openMenu = !openMenu" :aria-expanded="openMenu" aria-controls="mobile-navigation" aria-label="Close Navigation Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 absolute top-2 left-3/4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </nav>
+
+        
+        <!-- ****************************** Start Achievements -->
+        <section class="about__achievements mt-24">
+            <div class="container about__achievements-container">
+                <div class="about__achievements-left md:max-lg:w-4/5 md:max-lg:m-margeRes">
+                    <img src="../images/about achievements.svg">
+                </div>
+                <div class="about__achievements-right">
+                    <h1 class="text-h1 leading-all_h md:leading-cat_h1">Achievements</h1>
+                    <p class="mt-marge mx-0 mb-marge2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                        Minus voluptates animi, neque quas facilis modi quod possimus 
+                        doloribus, ratione, fugit excepturi architecto beatae voluptatum 
+                        illo error assumenda adipisci repudiandae expedita?</p>
+
+                    <div class="achivements__cards">
+                        <article class="achievement__card">
+                            <span class="achivements__icon ">
+                                <i class="uil uil-video-slash"></i>
+                                
+                                <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M12 18.75H4.5a2.25 2.25 0 01-2.25-2.25V9m12.841 9.091L16.5 19.5m-1.409-1.409c.407-.407.659-.97.659-1.591v-9a2.25 2.25 0 00-2.25-2.25h-9c-.621 0-1.184.252-1.591.659m12.182 12.182L2.909 5.909M1.5 4.5l1.409 1.409" />
+                                </svg> -->
+                            </span>
+                            <h3 class="text-h3 leading-all_h">300+</h3>
+                            <p>Courses</p>
+                        </article>
+
+                        <article class="achievement__card">
+                            <span class="achivements__icon">
+                                <i class="uil uil-users-alt"></i>
+
+                                <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+                                </svg>                                   -->
+                            </span>
+                            <h3 class="text-h3 leading-all_h">80,000+</h3>
+                            <p>Students</p>
+                        </article>
+
+                        <article class="achievement__card">
+                            <span class="achivements__icon">
+                                <i class="uil uil-trophy"></i>
+
+                                <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0" />
+                                </svg> -->
+                            </span>
+                            <h3 class="text-h3 leading-all_h">30+</h3>
+                            <p>Awards</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ****************************** End Achievements -->
+
+        <!-- ****************************** Start Team -->
+        <section class="team pt-16">
+            <h2 class="text-h2 leading-all_h">Meet Our Team</h2>
+            <div class="container team__container">
+                <article class="team__menber">
+                    <div class="team__menber-image"><img src="../images/tm1.3.png"></div>
+                    <div class="team__menber-info">
+                        <h4>Samandina J.</h4>
+                        <p>Expert Tutor</p>
+                    </div>
+                    <div class="team__member-socials">
+                        <a href="https://instagram.com" target="_blank"><i class="uil uil-instagram"></i></a>
+                        <a href="https://twitter.com" target="_blank"><i class="uil uil-twitter-alt"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="uil uil-linkedin-alt"></i></a>
+                        <a href="#"><i class="uil uil-eye"></i></a>
+                    </div>
+                </article>
+
+                <article class="team__menber">
+                    <div class="team__menber-image"><img src="../images/tm2.jpg"></div>
+                    <div class="team__menber-info">
+                        <h4>Myrlanda Orelien</h4>
+                        <p>Expert Tutor</p>
+                    </div>
+                    <div class="team__member-socials">
+                        <a href="https://instagram.com" target="_blank"><i class="uil uil-instagram"></i></a>
+                        <a href="https://twitter.com" target="_blank"><i class="uil uil-twitter-alt"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="uil uil-linkedin-alt"></i></a>
+                        <a href="#"><i class="uil uil-eye"></i></a>
+                    </div>
+                </article>
+
+                <article class="team__menber">
+                    <div class="team__menber-image"><img src="../images/tm3.jpg"></div>
+                    <div class="team__menber-info">
+                        <h4>Marla Jean</h4>
+                        <p>Expert Tutor</p>
+                    </div>
+                    <div class="team__member-socials">
+                        <a href="https://instagram.com" target="_blank"><i class="uil uil-instagram"></i></a>
+                        <a href="https://twitter.com" target="_blank"><i class="uil uil-twitter-alt"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="uil uil-linkedin-alt"></i></a>
+                        <a href="#"><i class="uil uil-eye"></i></a>
+                    </div>
+                </article>
+
+                <article class="team__menber">
+                    <div class="team__menber-image"><img src="../images/tm4.jpg"></div>
+                    <div class="team__menber-info">
+                        <h4>Mario Jerome</h4>
+                        <p>Expert Tutor</p>
+                    </div>
+                    <div class="team__member-socials">
+                        <a href="https://instagram.com" target="_blank"><i class="uil uil-instagram"></i></a>
+                        <a href="https://twitter.com" target="_blank"><i class="uil uil-twitter-alt"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="uil uil-linkedin-alt"></i></a>
+                        <a href="#"><i class="uil uil-eye"></i></a>
+                    </div>
+                </article>
+
+                <article class="team__menber">
+                    <div class="team__menber-image"><img src="../images/tm5.jpg"></div>
+                    <div class="team__menber-info">
+                        <h4>Izabelle Paul</h4>
+                        <p>Expert Tutor</p>
+                    </div>
+                    <div class="team__member-socials">
+                        <a href="https://instagram.com" target="_blank"><i class="uil uil-instagram"></i></a>
+                        <a href="https://twitter.com" target="_blank"><i class="uil uil-twitter-alt"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="uil uil-linkedin-alt"></i></a>
+                        <a href="#"><i class="uil uil-eye"></i></a>
+                    </div>
+                </article>
+
+                <article class="team__menber">
+                    <div class="team__menber-image"><img src="../images/tm6.jpg"></div>
+                    <div class="team__menber-info">
+                        <h4>Job Colbert</h4>
+                        <p>Expert Tutor</p>
+                    </div>
+                    <div class="team__member-socials">
+                        <a href="https://instagram.com" target="_blank"><i class="uil uil-instagram"></i></a>
+                        <a href="https://twitter.com" target="_blank"><i class="uil uil-twitter-alt"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="uil uil-linkedin-alt"></i></a>
+                        <a href="#"><i class="uil uil-eye"></i></a>
+                    </div>
+                </article>
+
+                <article class="team__menber">
+                    <div class="team__menber-image"><img src="../images/tm7.jpg"></div>
+                    <div class="team__menber-info">
+                        <h4>Bethie Vilsaint</h4>
+                        <p>Expert Tutor</p>
+                    </div>
+                    <div class="team__member-socials">
+                        <a href="https://instagram.com" target="_blank"><i class="uil uil-instagram"></i></a>
+                        <a href="https://twitter.com" target="_blank"><i class="uil uil-twitter-alt"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="uil uil-linkedin-alt"></i></a>
+                        <a href="#"><i class="uil uil-eye"></i></a>
+                    </div>
+                </article>
+
+                <article class="team__menber">
+                    <div class="team__menber-image"><img src="../images/tm8.jpg"></div>
+                    <div class="team__menber-info">
+                        <h4>Biden Miller</h4>
+                        <p>Expert Tutor</p>
+                    </div>
+                    <div class="team__member-socials">
+                        <a href="https://instagram.com" target="_blank"><i class="uil uil-instagram"></i></a>
+                        <a href="https://twitter.com" target="_blank"><i class="uil uil-twitter-alt"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="uil uil-linkedin-alt"></i></a>
+                        <a href="#"><i class="uil uil-eye"></i></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- ****************************** End Team -->
+
+
+
+        <!-- ****************************** Start Footer -->
+        <footer class="section pr-24 bg-color_bg1 pt-20 text-nav_a sm:max-lg:justify-center">
+            <div class="container sm:max-lg:w-medium  footer_container grid grid-cols-4 gap-20 sm:max-lg:grid-cols-2 tel:max-sm:grid-cols-1 tel:max-sm:text-center tel:max-sm:gap-8">
+                <div class="foot_1">
+                    <h4 class="leading-all_h text-h4"><a href="./index.html" class="foot_logo">GLearning</a></h4>
+                        <p class="mt-0 mx-0 mb-8 tel:max-sm:mx-auto tel:max-sm:my-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, 
+                            sed placeat labore officiis nemo incidunt explicabo iste perspiciatis molestiae adipisci.</p>
+                </div>
+
+                <div class="foot_2">
+                    <h4 class="leading-all_h text-h4">Permalinks</h4>
+                    <ul class="permalinks">
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="./courses.html">Couses</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="foot_3">
+                    <h4 class="leading-all_h text-h4">Privacy</h4>
+                    <ul class="privacy">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms and conditions</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="foot_4">
+                    <h4 class="leading-all_h text-h4">Contact Us</h4>
+                    <div>
+                        <p>+509 4859-2151</p>
+                        <p>jsamandina@gmail.com</p>
+                    </div>
+                    <ul class="foot__socials flex gap-4 text-faq_icon mt-4 tel:max-sm:justify-center">
+                        <li><a href="#"><i class="uil uil-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="uil uil-twitter-alt"></i></a></li>
+                        <li><a href="#"><i class="uil uil-linkedin-alt"></i></a></li>
+                        <li><a href="#"><i class="uil uil-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="foot_copyR text-center mt-16 py-pad px-0 border-t border-solid border-color_bg2">
+                <small>Copyright &copy; GLearning Youtube Tutorial</small>
+            </div>
+        </footer>
+        <!-- ****************************** END Footer -->
+
+        <script src="./main.js"></script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"  type="text/css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/dist/output.css" rel="stylesheet">
+
+
+    <!-- Alpine -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"></script>
+    <title>GLEARNING Contact</title>
+</head>
+<body class=" bg-color_bg leading-loose m-0 p-0 box-border text-white"
+        x-data="{navbarOpen: false, scrolledFromTop: false, openMenu: false}"
+        x-init="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false"
+        @scroll.window="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false"
+
+        :class="openMenu ? 'overflow-fidden' : 'overflow-visible'"
+    >
+
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
+    
+        <nav class="nav-menu w-screen h-20 bg-transparent fixed top-0 z-10 transition-all duration-200"
+            :class="{ 'h-20': !scrolledFromTop, 'h-20': !scrolledFromTop}"
+        >
+            <div class="container lg:w-large my-auto mx-0  pt-0 pb-0 pl-24 text-color_white h-full flex justify-between items-center">
+                <a href="index.html" class=""><h4 class="leading-all_h text-h4 ">GLEARNING</h4></a>
+                <ul class="hidden  md:flex flex-row items-center gap-16">
+                    <li><a class="inline-flex hover:text-color_bg2 text-nav_a duration-duration_400" href="index.html" aria-current="true">Home</a></li>
+                    <li><a class="inline-flex hover:text-color_bg2 text-nav_a duration-duration_400" href="about.html">About</a></li>
+                    <li><a class="inline-flex hover:text-color_bg2 text-nav_a duration-duration_400" href="courses.html">Courses</a></li>
+                    <li><a class="inline-flex hover:text-color_bg2 text-nav_a duration-duration_400" href="contact.html">Contact us</a></li>
+                </ul>
+                <button id="open-menu-btn" class="md:hidden" @click="openMenu = !openMenu" :aria-expanded="openMenu" aria-controls="mobile-navigation" aria-label="Navigation Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-white">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- POP out navbar -->
+
+        <nav id="mobile-navigation" class="md:hidden fixed top-0 right-0 bottom-0 left-0 z-10 navMenu_Ul"
+            :class="openMenu ? 'visible' : 'invisible' " x-cloak>
+            <ul class="ul_li absolute top-20 right-10 bottom-0  w-72 h-fit gap-0 py-4 z-10" 
+                :class="openMenu ? 'translate-x-0' : 'translate-x-full'">
+                <!-- transition-all -->
+                <li class="animate-wiggle origin-top-right w-full h-li_responsive"><a class="bg-primary shadow-box_shad1 text-center grid p-4 w-full h-full hover:bg-color_bg2 hover:text-color_white" href="./index.html" aria-current="true">Home</a></li>
+                <li class="animate-wiggle origin-top-right w-full h-li_responsive"><a class="bg-primary shadow-box_shad1 text-center grid p-4 w-full h-full  hover:bg-color_bg2 hover:text-color_white" href="about.html">About</a></li>
+                <li class="animate-wiggle origin-top-right w-full h-li_responsive"><a class="bg-primary shadow-box_shad1 text-center grid p-4 w-full h-full hover:bg-color_bg2 hover:text-color_white" href="courses.html">Courses</a></li>
+                <li class="animate-wiggle origin-top-right w-full h-li_responsive"><a class="bg-primary shadow-box_shad1 text-center grid p-4 w-full h-full  hover:bg-color_bg2 hover:text-color_white" href="contact.html">Contact us</a></li>
+            </ul>
+            <button id="close-menu-btn" class="absolute top-4 right-0 left-40 bottom-full" @click="openMenu = !openMenu" :aria-expanded="openMenu" aria-controls="mobile-navigation" aria-label="Close Navigation Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 absolute top-2 left-3/4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </nav>
+
+        <section class="contact mt-48 md:max-lg:pb-0 md:max-lg:mt-20 lg:max-2xl:mt-20">
+            <div class="container contact__container">
+                <aside class="contact__aside">
+                    <div class="aside__image">
+                        <img src="../images/contactLog.svg">
+                    </div>
+                    <h2 class="text-h2 leading-all_h">Contact Us</h2>
+                    <p class="text-nav_a mb-8">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Quaerat neque at dolor deserunt, aperiam temporibus facilis. Voluptatem accusantium rerum fugit.
+                    </p>
+                    <ul class="contact__details">
+                        <li>
+                            <i class="uil uil-phone-times"></i>
+                            <h5 class="text-h5 leading-all_h">+509 4859-2151</h5>
+                        </li>
+                        <li>
+                            <i class="uil uil-envelope"></i>
+                            <h5 class="text-h5 leading-all_h">jsamandina@gmail.com</h5>
+                        </li>
+                        <li>
+                            <i class="uil uil-location-point"></i>
+                            <h5 class="text-h5 leading-all_h">Port-Au-Prince, Haiti</h5>
+                        </li>
+                    </ul>
+
+                    <ul class="contact__socials">
+                        <li>
+                            <a href="https://facebook.com">
+                                <i class="uil uil-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com">
+                                <i class="uil uil-twitter-alt"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com">
+                                <i class="uil uil-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com">
+                                <i class="uil uil-linkedin-alt"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </aside>
+
+                <form class="form__contact">
+                    <div class="form__name flex gap-g flex-col">
+                        <input type="text" id="name" name="first_name" placeholder="First Name" required>
+                        <input type="text" id="lastname" name="last_name" placeholder="Last Name" required>
+                    </div>
+                    <input type="email" id="email" name="email_address" placeholder="Your Email Address" required>
+                    <textarea name="message" id="message" rows="7" placeholder="Message" required></textarea>
+                    <button type="submit" class="btn-secondary hover:btn-secondary_B w-max mt-4 cursor-pointer">Send Message</button>
+                </form>
+
+            </div>
+        </section>
+
+
+        <!-- ****************************** Start Footer -->
+        <footer class="section pr-24 bg-color_bg1 pt-20 text-nav_a sm:max-lg:justify-center">
+            <div class="container sm:max-lg:w-medium  footer_container grid grid-cols-4 gap-20 sm:max-lg:grid-cols-2 mobil:max-sm:grid-cols-1 mobil:max-sm:text-center mobil:max-sm:gap-8">
+                <div class="foot_1">
+                    <h4 class="leading-all_h text-h4"><a href="./index.html" class="foot_logo">GLearning</a></h4>
+                        <p class="mt-0 mx-0 mb-8 tel:max-sm:mx-auto tel:max-sm:my-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, 
+                            sed placeat labore officiis nemo incidunt explicabo iste perspiciatis molestiae adipisci.</p>
+                </div>
+
+                <div class="foot_2">
+                    <h4 class="leading-all_h text-h4">Permalinks</h4>
+                    <ul class="permalinks">
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="./courses.html">Couses</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="foot_3">
+                    <h4 class="leading-all_h text-h4">Privacy</h4>
+                    <ul class="privacy">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms and conditions</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="foot_4">
+                    <h4 class="leading-all_h text-h4">Contact Us</h4>
+                    <div>
+                        <p>+509 4859-2151</p>
+                        <p>jsamandina@gmail.com</p>
+                    </div>
+                    <ul class="foot__socials flex gap-4 text-faq_icon mt-4 tel:max-sm:justify-center">
+                        <li><a href="#"><i class="uil uil-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="uil uil-twitter-alt"></i></a></li>
+                        <li><a href="#"><i class="uil uil-linkedin-alt"></i></a></li>
+                        <li><a href="#"><i class="uil uil-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="foot_copyR text-center mt-16 py-pad px-0 border-t border-solid border-color_bg2">
+                <small>Copyright &copy; GLearning Youtube Tutorial</small>
+            </div>
+        </footer>
+        <!-- ****************************** END Footer -->
+
+        <script src="./main.js"></script>
+</body>
+</html>
